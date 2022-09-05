@@ -3,7 +3,7 @@ import math
 from bitstring import *
 
 #Set logging library configuration
-logging.basicConfig(level=logging.DEBUG, format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s', datefmt='%H:%M:%S')
+logging.basicConfig(encoding='utf-8', level=logging.DEBUG, format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s', datefmt='%H:%M:%S')
 
 #List of blocks to treat as invisible by default
 ignore_defaults = ["minecraft:air",
