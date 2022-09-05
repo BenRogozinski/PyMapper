@@ -3,7 +3,7 @@ import math
 from bitstring import *
 
 #Set logging library configuration
-logging.basicConfig(encoding='utf-8', level=logging.DEBUG, format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s', datefmt='%H:%M:%S')
+logging.basicConfig(level=logging.DEBUG, format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s', datefmt='%H:%M:%S')
 
 #List of blocks to treat as invisible by default
 ignore_defaults = ["minecraft:air",
@@ -43,7 +43,7 @@ def section_data(chunk_section):
     #Create integer list
     logger.debug("Creating integer list")
     integer_list = [a[b:b+bit_len].int for a in block_index for b in range(0, len(block_index), bit_len) if len(a[b:b+bit_len]) == bit_len]
-    logger.debug("Integer list: " + str(len(integer_list)))
+    logger.debug("Integer list: " + str(len(integer_list)) + " items")
 
 def get_topmost(chunk, ignore_list=ignore_defaults):
     section_count = ""

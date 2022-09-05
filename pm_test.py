@@ -1,6 +1,7 @@
 from nbt import region
 import pymapper
 from bitstring import *
+
 #Load region file
 regionfile = region.RegionFile("r.0.0.mca",'rb')
 
