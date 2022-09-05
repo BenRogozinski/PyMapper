@@ -1,0 +1,20 @@
+Notes:
+
+16:  256 long int
+32:  342 long int
+64:  410 long int
+128: 456 long int
+
+4096 blocks per section (16 x 16 x 16)
+Long integer is 64 bits
+Info from mc wiki: "All indices are the same length: the minimum amount of bytes required to represent the largest index in the palette"
+Info from mc wiki: "These indices have a minimum size of 4 bits"
+
+16 unique blocks   4 bits per block  each long int is 16 blocks     0 extras    256 long integers
+32 unique blocks   5 bits per block  each long int is 12.8 blocks   22 extras?  342 long integers
+64 unique blocks   6 bits per block  each long int is 10.66 blocks  26 extras?  410 long integers
+128 unique blocks  7 bits per block  each long int is 9.14 blocks   8 extras?   456 long integers
+
+(len(palette) - 1).bit_length() to calculate bit length
+int(64/bit_length) to calculate number of blocks per integer
+math.ceil(4096/blocks_per_int) to calculate number of integers
